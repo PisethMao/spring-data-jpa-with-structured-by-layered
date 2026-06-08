@@ -41,8 +41,7 @@ public class ProductController {
     }
 
     @PutMapping("/{code}")
-    public ProductResponse updateByCode(@PathVariable String code,
-                                        @Valid @RequestBody UpdateProductRequest updateProductRequest) {
+    public ProductResponse updateByCode(@PathVariable String code, @Valid @RequestBody UpdateProductRequest updateProductRequest) {
         log.info("Updating product with code: {} with {}", code, updateProductRequest);
         return productService.updateProduct(code, updateProductRequest);
     }
